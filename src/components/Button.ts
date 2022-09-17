@@ -24,5 +24,6 @@ export class StopwatchButton extends LitElement {
   `;
   @property({ type: String })
   name: string = "";
-  render = () => html`<button class="${this.name.toLowerCase()}">${this.name}</button>`;
+  render = () =>
+    html`<button class="${this.name.toLowerCase()}">${this.name}</button>`;
 }

@@ -11,7 +11,7 @@ type LapTimeObject = {
   seconds: string;
   milliseconds: string;
   time: string;
-}
+};
 
 @customElement("stop-watch")
 export class Stopwatch extends LitElement implements StopwatchInterface {
@@ -29,7 +29,7 @@ export class Stopwatch extends LitElement implements StopwatchInterface {
           break;
         case "l":
           (this.isStarted ? this.lap : this.nothing)(this.getLapTime().time);
-          break; 
+          break;
         case "R":
           this.reset();
           break;
@@ -38,7 +38,7 @@ export class Stopwatch extends LitElement implements StopwatchInterface {
       }
     };
   }
-  private nothing = (a: any): void => void(a);
+  private nothing = (a: any): void => void a;
   static styles = css`
     :host div {
       justify-content: center;
@@ -53,13 +53,12 @@ export class Stopwatch extends LitElement implements StopwatchInterface {
       margin: 5rem 0;
       font-size: 2rem;
     }
-    :host stopwatch-button [name=Start] {
+    :host stopwatch-button [name="Start"] {
       padding: 4rem;
     }
   `;
   private intervalId: IntervalId;
-  private doubleZeroes = (num: number): string =>
-    (num < 10 ? "0" : "") + num;
+  private doubleZeroes = (num: number): string => (num < 10 ? "0" : "") + num;
 
   @property({ type: Boolean })
   private isStarted: boolean = false;
@@ -130,8 +129,14 @@ export class Stopwatch extends LitElement implements StopwatchInterface {
     const minutes = this.doubleZeroes(this.minutes);
     const seconds = this.doubleZeroes(this.seconds);
     const milliseconds = this.doubleZeroes(this.milliseconds);
-    return { hours, minutes, seconds, milliseconds, time: `${hours}:${minutes}:${seconds}.${milliseconds}` };
-  }
+    return {
+      hours,
+      minutes,
+      seconds,
+      milliseconds,
+      time: `${hours}:${minutes}:${seconds}.${milliseconds}`
+    };
+  };
 
   render() {
     const { hours, minutes, seconds, milliseconds, time } = this.getLapTime();

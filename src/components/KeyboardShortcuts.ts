@@ -17,7 +17,7 @@ export class KeyboardShortcuts extends LitElement {
       padding: 1rem;
       background-color: #303030;
       border-radius: 1.25rem;
-      row-gap: .75rem;
+      row-gap: 0.75rem;
     }
     :host kbd {
       padding: 4px 9px;
@@ -40,16 +40,16 @@ export class KeyboardShortcuts extends LitElement {
     }
   `;
   render = () => {
-    const shortcuts = this.shortcuts.map(x => html`
-      <div class="shortcut">
-        <kbd>${x.shortcut}</kbd>
-          - 
-        <div>${x.description}</div>
-      </div>
-    `)
+    const shortcuts = this.shortcuts.map(
+      x => html`
+        <div class="shortcut">
+          <kbd>${x.shortcut}</kbd> - <div>${x.description}</div>
+        </div>
+      `
+    );
     return html`
       <h4>Keyboard Shortcuts</h4>
       ${shortcuts}
     `;
-  }
+  };
 }

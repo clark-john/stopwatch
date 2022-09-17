@@ -11,4 +11,4 @@ export type LapEventOptions = {
 export type Shortcut = {
   shortcut: string;
   description: string;
-} 
+};

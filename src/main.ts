@@ -58,7 +58,10 @@ export class MainElement extends LitElement {
       </div>
       <div class="laps">
         <laps-container></laps-container>
-        <stopwatch-button name="Download CSV" @click="${() => dispatchEvent(new Event("downloadlaps"))}" />
+        <stopwatch-button
+          name="Download CSV"
+          @click="${() => dispatchEvent(new Event("downloadlaps"))}"
+        />
       </div>
     </div>
   `;

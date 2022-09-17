@@ -30,7 +30,7 @@ export class Laps extends LitElement implements LapsHandler {
     if (this.laps.length > 7) {
       this.style.overflowY = "scroll";
       setTimeout(() => {
-        this.scroll({ top: 9**20, behavior: "smooth" })
+        this.scroll({ top: 9 ** 20, behavior: "smooth" });
       }, 2);
     }
   };
@@ -51,7 +51,7 @@ export class Laps extends LitElement implements LapsHandler {
       --gray: rgba(255, 255, 255, 0.3);
       border: 2px solid var(--gray);
       height: 88%;
-      border-radius: .5rem;
+      border-radius: 0.5rem;
       padding: 1rem 2rem;
       width: 230px;
     }
@@ -62,14 +62,13 @@ export class Laps extends LitElement implements LapsHandler {
     }
     :host div div {
       display: grid;
-      gap: .5rem;
+      gap: 0.5rem;
     }
     :host::-webkit-scrollbar {
       width: 8px;
       background-color: #232323;
       border-radius: 2rem;
       display: block;
-      
     }
     :host::-webkit-scrollbar-thumb {
       border-radius: 2rem;

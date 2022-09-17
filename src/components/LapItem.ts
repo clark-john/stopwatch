@@ -30,7 +30,7 @@ export class LapItem extends LitElement {
     }
   `;
   render = () => html`
-    <div> 
+    <div>
       <span class="number">${this.number}</span>
       <span class="time">${this.time}</span>
     </div>
