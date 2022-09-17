@@ -1,3 +1,9 @@
+/**
+ * Download csv utility
+ * 
+ * @author John Clark
+*/
+
 import { Lap } from "./types";
 
 export const downloadCsv = (lapsArray: Array<Lap>): void => {

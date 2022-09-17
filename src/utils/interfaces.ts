@@ -1,3 +1,9 @@
+/**
+ * All interfaces for stopwatch web app
+ * 
+ * @author John Clark
+*/
+
 import { Lap } from "./types";
 
 export interface StopwatchInterface {

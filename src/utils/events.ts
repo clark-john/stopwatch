@@ -1,3 +1,9 @@
+/**
+ * Events for stopwatch web app
+ * 
+ * @author John Clark
+*/
+
 import { LapEventOptions } from "./types";
 
 export class LapEvent extends Event {

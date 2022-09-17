@@ -2,16 +2,8 @@ import { html, css, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { StopwatchInterface } from "@/utils/interfaces";
 import { LapEvent } from "@/utils/events";
+import { LapTimeObject, IntervalId } from "@/utils/types";
 import "./Button";
-
-type IntervalId = number | undefined;
-type LapTimeObject = {
-  hours: string;
-  minutes: string;
-  seconds: string;
-  milliseconds: string;
-  time: string;
-};
 
 @customElement("stop-watch")
 export class Stopwatch extends LitElement implements StopwatchInterface {
@@ -60,19 +52,19 @@ export class Stopwatch extends LitElement implements StopwatchInterface {
   private intervalId: IntervalId;
   private doubleZeroes = (num: number): string => (num < 10 ? "0" : "") + num;
 
-  @property({ type: Boolean })
+  @property()
   private isStarted: boolean = false;
 
-  @property({ type: Number })
+  @property()
   private milliseconds: number = 0;
 
-  @property({ type: Number })
+  @property()
   private seconds: number = 0;
 
-  @property({ type: Number })
+  @property()
   private minutes: number = 0;
 
-  @property({ type: Number })
+  @property()
   private hours: number = 0;
 
   private updateTime(millisecs: number) {
