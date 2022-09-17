@@ -12,6 +12,7 @@
     "lit": "^2.2.8"
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "prettier": "^2.7.1",
     "typescript": "^4.6.4",
     "vite": "^3.0.7"
