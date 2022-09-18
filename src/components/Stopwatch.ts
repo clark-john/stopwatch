@@ -48,24 +48,20 @@ export class Stopwatch extends LitElement implements StopwatchInterface {
     :host stopwatch-button [name="Start"] {
       padding: 4rem;
     }
+    @media only screen and (max-width: 790px) {
+      .lap-button {
+        display: none;
+      }
+    }
   `;
   private intervalId: IntervalId;
   private doubleZeroes = (num: number): string => (num < 10 ? "0" : "") + num;
 
-  @property()
-  private isStarted: boolean = false;
-
-  @property()
-  private milliseconds: number = 0;
-
-  @property()
-  private seconds: number = 0;
-
-  @property()
-  private minutes: number = 0;
-
-  @property()
-  private hours: number = 0;
+  @property() private isStarted: boolean = false;
+  @property() private milliseconds: number = 0;
+  @property() private seconds: number = 0;
+  @property() private minutes: number = 0;
+  @property() private hours: number = 0;
 
   private updateTime(millisecs: number) {
     if (millisecs > 99) {
@@ -149,6 +145,7 @@ export class Stopwatch extends LitElement implements StopwatchInterface {
           ></stopwatch-button>
           <stopwatch-button
             name="Lap"
+            class="lap-button"
             @click="${() => this.lap(time)}"
           ></stopwatch-button>
           <stopwatch-button

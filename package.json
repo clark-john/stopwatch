@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "format": "prettier -w vite.config.ts ./src/**/*.ts"
+    "format": "prettier -w vite.config.ts ./src/**/*.ts",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "lit": "^2.2.8"
