@@ -1,8 +1,8 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { LapsHandler } from "@/utils/interfaces";
-import { LapEvent } from "@/utils/events";
 import { Lap } from "@/utils/types";
+import { LapEventOptions } from "@/utils/types";
 import { downloadCsv } from "@/utils/downloadCsv";
 import "./LapItem";
 
@@ -13,9 +13,9 @@ export class Laps extends LitElement implements LapsHandler {
     this.style.overflowY = "";
     window.addEventListener("downloadlaps", (): void => downloadCsv(this.laps));
     // @ts-ignore
-    window.addEventListener("lap", (lp: LapEvent): void => {
-      if (!lp.reset) {
-        this.createLap({ time: lp.time, number: this.startingNumber });
+    window.addEventListener("lap", (lp: CustomEvent<LapEventOptions>): void => {
+      if (!lp.detail.reset) {
+        this.createLap({ time: lp.detail.time, number: this.startingNumber });
       } else {
         this.resetAll();
       }

@@ -3,9 +3,6 @@ import { property, customElement } from "lit/decorators.js";
 
 @customElement("stopwatch-button")
 export class StopwatchButton extends LitElement {
-  constructor() {
-    super();
-  }
   static styles = css`
     :host button {
       font-family: Inter, sans-serif;

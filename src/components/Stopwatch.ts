@@ -1,8 +1,8 @@
 import { html, css, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { StopwatchInterface } from "@/utils/interfaces";
-import { LapEvent } from "@/utils/events";
 import { LapTimeObject, IntervalId } from "@/utils/types";
+import { LapEventOptions } from "@/utils/types";
 import "./Button";
 
 @customElement("stop-watch")
@@ -100,7 +100,7 @@ export class Stopwatch extends LitElement implements StopwatchInterface {
   };
   public lap = (time: string): void =>
     void (this.isStarted
-      ? window.dispatchEvent(new LapEvent("lap", { time }))
+      ? window.dispatchEvent(new CustomEvent<LapEventOptions>("lap", { detail: { time } }))
       : null);
 
   public reset = (): void => {
@@ -109,7 +109,7 @@ export class Stopwatch extends LitElement implements StopwatchInterface {
     this.seconds = 0;
     this.minutes = 0;
     this.hours = 0;
-    window.dispatchEvent(new LapEvent("lap", { reset: true }));
+    window.dispatchEvent(new CustomEvent<LapEventOptions>("lap", { detail: { reset: true } }))
   };
 
   private getLapTime = (): LapTimeObject => {
