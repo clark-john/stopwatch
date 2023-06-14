@@ -4,8 +4,6 @@
  * @author John Clark
  */
 
-import { Lap } from "./types";
-
 export const downloadCsv = (lapsArray: Array<Lap>): void => {
 	if (!lapsArray.length) {
 		alert("Laps empty");
@@ -21,6 +19,6 @@ export const downloadCsv = (lapsArray: Array<Lap>): void => {
 		anchor.href = blobUrl;
 		anchor.download = "laps.csv";
 		anchor.click();
-		anchor.remove();		
+		anchor.remove();
 	}
 };

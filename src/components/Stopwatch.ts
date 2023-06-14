@@ -1,8 +1,5 @@
 import { html, css, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { StopwatchInterface } from "@/utils/interfaces";
-import { LapTimeObject, IntervalId } from "@/utils/types";
-import { LapEventOptions } from "@/utils/types";
 import "./Button";
 
 @customElement("stop-watch")
@@ -68,16 +65,19 @@ export class Stopwatch extends LitElement implements StopwatchInterface {
 			this.milliseconds = 0;
 			this.seconds++;
 		}
-		if (this.seconds > 60) {
+		if (this.seconds > 59) {
 			this.minutes++;
 			this.seconds = 0;
 		}
-		if (this.minutes > 60) {
+		if (this.minutes > 59) {
 			this.hours++;
 			this.minutes = 0;
 		}
-		if (this.hours > 25) {
+		if (this.hours > 23) {
 			this.stop();
+			setTimeout(() => {
+				alert("It's over!");
+			}, 100);
 		}
 	}
 

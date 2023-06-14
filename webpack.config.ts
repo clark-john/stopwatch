@@ -4,7 +4,9 @@ import path from "path";
 import "webpack-dev-server";
 import { Configuration } from "webpack";
 
-const mode = (process.env.NODE_ENV || 'development') as 'development' | 'production';
+const mode = (process.env.NODE_ENV || "development") as
+	| "development"
+	| "production";
 
 const config: Configuration = {
 	mode,
@@ -13,8 +15,8 @@ const config: Configuration = {
 		static: {
 			directory: path.resolve(__dirname, "public")
 		},
-		liveReload: mode === 'development',
-		hot: mode === 'development',
+		liveReload: mode === "development",
+		hot: mode === "development",
 		port: 8000,
 		watchFiles: ["src/**/*.ts"]
 	},

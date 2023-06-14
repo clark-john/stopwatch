@@ -1,6 +1,5 @@
 import { html, css, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
-import { Shortcut } from "@/utils/types";
 
 @customElement("keyboard-shortcuts")
 export class KeyboardShortcuts extends LitElement {
