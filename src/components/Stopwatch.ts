@@ -1,6 +1,5 @@
 import { html, css, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import "./Button";
 
 @customElement("stop-watch")
 export class Stopwatch extends LitElement implements StopwatchInterface {

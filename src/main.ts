@@ -1,9 +1,6 @@
 import { html, css, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
-import "./components/Stopwatch";
-import "./components/Laps";
-import "./components/Button";
-import "./components/KeyboardShortcuts";
+import "./components";
 
 import "./index.css";
 

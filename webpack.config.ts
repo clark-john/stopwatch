@@ -25,7 +25,7 @@ const config: Configuration = {
 			"@": path.resolve(__dirname, "src")
 		},
 		extensions: [".js", ".ts"],
-		mainFiles: ["main"]
+		mainFiles: ["main", "index"]
 	},
 	module: {
 		rules: [
